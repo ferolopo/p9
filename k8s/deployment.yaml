@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: p6
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: p6
+  template:
+    metadata:
+      labels:
+        app: p6
+    spec:
+      containers:
+      - image: dorowu/ubuntu-desktop-lxde-vnc:focal-lxqt
+        name: p6
+        ports:
+        - containerPort: 80
